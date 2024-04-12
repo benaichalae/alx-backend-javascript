@@ -1,17 +1,9 @@
-import createIteratorObject from "./100-createIteratorObject.js";
-
-import createEmployeesObject from './11-createEmployeesObject.js';
-import createReportObject from './12-createReportObject.js';
-
-const employees = {
-  ...createEmployeesObject('engineering', ['Bob', 'Jane']),
-  ...createEmployeesObject('marketing', ['Sylvie'])
-};
-
-const report = createReportObject(employees);
-
-const reportWithIterator = createIteratorObject(report);
-
-for (const item of reportWithIterator) {
-  console.log(item);
+export default function createIteratorObject(report) {
+   let employee = [];
+   for (let [depts, emplys] of Object.entries(report.allEmployees)){
+        for (let emp of emplys){
+            employee.push(emp);
+        }
+   }
+   return employee;
 }
