@@ -4,7 +4,7 @@
  * @returns {Set} - The Set created from the array.
  */
 function setFromArray(array) {
-    return new Set(array);
+  return new Set(array);
 }
 
 module.exports = setFromArray;

@@ -5,7 +5,7 @@
  * @returns {Array} - An array of student objects located in the specified city.
  */
 function getStudentsByLocation(students, city) {
-    return students.filter(student => student.location === city);
+  return students.filter((student) => student.location === city);
 }
 
 module.exports = getStudentsByLocation;
