@@ -10,5 +10,3 @@ function getListStudentIds(studentList) {
 
     return studentList.map(student => student.id);
 }
-
-module.exports = getListStudentIds;
