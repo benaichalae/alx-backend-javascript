@@ -1,10 +1,13 @@
 // 1-stdin.js
 const readline = require('readline');
 
-// Create an interface for reading data from the standard input
+// Check if input is from a pipe or terminal
+const isInputFromPipe = !process.stdin.isTTY;
+
 const rl = readline.createInterface({
   input: process.stdin,
-  output: process.stdout
+  output: process.stdout,
+  terminal: !isInputFromPipe // Disable terminal mode if input is from a pipe
 });
 
 // Display the welcome message
@@ -16,7 +19,9 @@ rl.on('line', (input) => {
   rl.close();
 });
 
-// Display the closing message when the interface is closed
+// Display the closing message only if input is from a pipe
 rl.on('close', () => {
-  console.log('This important software is now closing');
+  if (isInputFromPipe) {
+    console.log('This important software is now closing');
+  }
 });
