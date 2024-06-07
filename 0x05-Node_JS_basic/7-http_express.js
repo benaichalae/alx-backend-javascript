@@ -5,6 +5,10 @@ const app = express();
 const PORT = 1245;
 const DB_FILE = process.argv[2] || '';
 
+/**
+ * Counts the students in a CSV data file.
+ * @param {String} dataPath The path to the CSV data file.
+ */
 const countStudents = async (dataPath) => {
   try {
     const data = await fs.readFile(dataPath, 'utf-8');
