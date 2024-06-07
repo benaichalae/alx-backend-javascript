@@ -1,8 +1,11 @@
-// full_server/controllers/AppController.js
-
-export class AppController {
-    static getHomepage(req, res) {
-      res.status(200).send('Hello Holberton School!');
+/**
+ * Contains the miscellaneous route handlers.
+ */
+class AppController {
+    static getHomepage(request, response) {
+      response.status(200).send('Hello Holberton School!');
     }
   }
+  
+  module.exports = AppController;
   
